@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+  <string name="app_name">Stock Alarm Viewer</string>
+  <string name="next_alarm">Next alarm at</string>
+  <string name="next_alarm_not_available">N/A</string>
+  <string name="set_alarm_five_minutes_from_now">Set alarm five minutes from now</string>
+
+</resources>
