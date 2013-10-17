@@ -35,7 +35,7 @@ public class ClockActivity extends Activity implements ClockController.Listener 
       @Override public void onClick(View v) {
         Calendar now = Calendar.getInstance();
         now.add(Calendar.MINUTE, 5);
-        controller.setAlarm(now);
+        controller.addAlarm(now);
       }
     });
   }

@@ -88,10 +88,11 @@ public class ClockController {
       try {
         if (c.getCount() > 0) {
           c.moveToFirst();
-          Calendar now = Calendar.getInstance();
           Date dt = parseDayAndTime(context, c.getString(c.getColumnIndex(VALUE)));
-          
           if (dt == null) return null;
+          
+          Calendar now = Calendar.getInstance();
+          now.setTime(dt);
           
           // Since the date return only the time and day of the week
           // we need to inject the other values based on the date
@@ -121,7 +122,7 @@ public class ClockController {
     return android.text.format.DateFormat.is24HourFormat(context);
   }
 
-  public void setAlarm(Calendar calendar) {
+  public void addAlarm(Calendar calendar) {
     Intent intent = new Intent(AlarmClock.ACTION_SET_ALARM);
     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
         .putExtra(AlarmClock.EXTRA_HOUR, calendar.get(Calendar.HOUR_OF_DAY))
